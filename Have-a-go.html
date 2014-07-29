@@ -55,25 +55,60 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+  
+
+  
   </head>
 
 	<body>
 	
-	Link etc....
+	Link to your selfie: <input name='pictureUrl' id='pictureUrl' type='text' maxlength='200' onchange='generateTweet();' />
+	Friend1 <input name='friend1' id='friend1' type='text' maxlength='15' onchange='generateTweet();' />
+
+	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	<p><a id="tweetButton" href="https://twitter.com/intent/tweet?text=hi">Reply</a></p>
+
+	<script src="assets/js/jquery.js"></script>  
+	<script type="text/javascript">
+	var twitterApi = "https://twitter.com/intent/tweet?text=";
+	var coreMessage = "I used sleeping selfie to post a picture on twitter. Help comic relief and donate &pound;1 to view this picture!";
+	var ourTweet = coreMessage;
 	
-	<script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap-transition.js"></script>
-    <script src="/assets/js/bootstrap-alert.js"></script>
-    <script src="/assets/js/bootstrap-modal.js"></script>
-    <script src="/assets/js/bootstrap-dropdown.js"></script>
-    <script src="/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="/assets/js/bootstrap-tab.js"></script>
-    <script src="/assets/js/bootstrap-tooltip.js"></script>
-    <script src="/assets/js/bootstrap-popover.js"></script>
-    <script src="/assets/js/bootstrap-button.js"></script>
-    <script src="/assets/js/bootstrap-collapse.js"></script>
-    <script src="/assets/js/bootstrap-carousel.js"></script>
-    <script src="/assets/js/bootstrap-typeahead.js"></script>
+	setMessage(ourTweet);
+	
+	function generateTweet() {
+	
+		var friend1 = $('#friend1').val();
+		var url = $('#pictureUrl'). val();
+		
+		if(friend1 != ""){
+			ourTweet = "Hey @" + friend1 + " " + coreMessage;
+		}	
+		
+		setMessage(ourTweet);
+	}
+	
+	function setMessage(text){
+		var msg = encodeURIComponent(ourTweet.replace(/&amp;/g, "&"));
+		$("#tweetButton").attr("href", twitterApi + ourTweet);	
+	}
+	
+	</script>
+	
+	
+	
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
 
   </body>
 </html>
