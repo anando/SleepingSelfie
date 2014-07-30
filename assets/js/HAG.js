@@ -8,7 +8,7 @@ function generateTweet() {
 	
 	var thisMessage = defaultMessage;
 	if(friend1 != ""){
-		thisMessage = "Hey @" + friend1 + " " + defaultMessage + pictureUrl + " ";
+		thisMessage = "Hey @" + friend1 + " " + defaultMessage + url + " ";
 	}	
 	
 	setMessage(thisMessage);
