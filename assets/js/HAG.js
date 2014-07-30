@@ -1,11 +1,11 @@
-var defaultMessage = "I used sleeping selfie to post a picture on twitter. Donate £1 to view this picture! Here is the link: ";
+var defaultMessage = "I used #sleepingselfie to post a picture on twitter. Donate £1 to view the picture! Here's the link: ";
 setMessage(defaultMessage);
 
 function generateTweet() {
 
 	var friend1 = $('#friend1').val();
 	var url = $('#pictureUrl'). val();
-	url="http://sleepingselfie.azurewebsites.net/donate-and-continue.html?" + url;
+	url="http://sleepingselfie.azurewebsites.net/donate.html?" + url;
 	
 	var thisMessage = defaultMessage;
 	if(friend1 != ""){
