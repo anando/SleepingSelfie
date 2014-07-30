@@ -1,4 +1,4 @@
-var defaultMessage = "I used sleeping selfie to post a picture on twitter. Help comic relief and donate &pound;1 to view this picture!";
+var defaultMessage = "I used sleeping selfie to post a picture on twitter. Donate &pound;1 to view this picture! Here is the link: ";
 setMessage(defaultMessage);
 
 function generateTweet() {
@@ -8,7 +8,7 @@ function generateTweet() {
 	
 	var thisMessage = defaultMessage;
 	if(friend1 != ""){
-		thisMessage = "Hey @" + friend1 + " " + defaultMessage;
+		thisMessage = "Hey @" + friend1 + " " + defaultMessage + pictureUrl + " ";
 	}	
 	
 	setMessage(thisMessage);
@@ -18,4 +18,6 @@ function setMessage(text){
 	var msg = encodeURIComponent(text.replace(/&amp;/g, "&"));
 	var twitterApi = "https://twitter.com/intent/tweet?text=";
 	$("#tweetButton").attr("href", twitterApi + msg);	
+	
+	
 }
