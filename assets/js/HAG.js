@@ -1,22 +1,21 @@
-var twitterApi = "https://twitter.com/intent/tweet?text=";
-var coreMessage = "I used sleeping selfie to post a picture on twitter. Help comic relief and donate &pound;1 to view this picture!";
-var ourTweet = coreMessage;
-
-setMessage(ourTweet);
+var defaultMessage = "I used sleeping selfie to post a picture on twitter. Help comic relief and donate &pound;1 to view this picture!";
+setMessage(defaultMessage);
 
 function generateTweet() {
 
 	var friend1 = $('#friend1').val();
 	var url = $('#pictureUrl'). val();
 	
+	var thisMessage = defaultMessage;
 	if(friend1 != ""){
-		ourTweet = "Hey @" + friend1 + " " + coreMessage;
+		thisMessage = "Hey @" + friend1 + " " + defaultMessage;
 	}	
 	
-	setMessage(ourTweet);
+	setMessage(thisMessage);
 }
 
 function setMessage(text){
-	var msg = encodeURIComponent(ourTweet.replace(/&amp;/g, "&"));
-	$("#tweetButton").attr("href", twitterApi + ourTweet);	
+	var msg = encodeURIComponent(text.replace(/&amp;/g, "&"));
+	var twitterApi = "https://twitter.com/intent/tweet?text=";
+	$("#tweetButton").attr("href", twitterApi + msg);	
 }
