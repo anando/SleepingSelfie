@@ -53,7 +53,18 @@ Get funny4money; Get donating
         margin-top: 28px;
       }
 	  
-	  
+	  .selfie {
+		width: 200px;
+	}		
+		.img-col {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			width: 30%;
+			height: 200px;
+			background-position: center center;
+			background-size: cover;
+		}
   
     </style>
     <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -66,12 +77,14 @@ Get funny4money; Get donating
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="/assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
   </head>
 
   <body>
+  
+  
 
     <div class="container-narrow">
 
@@ -86,7 +99,21 @@ Get funny4money; Get donating
       </div>
 
       <hr>
-
+	  
+	  <div class="image-container">
+		<div class="row">
+			<div class="img-col" style="background-image: url('photo1.jpg');"></div>
+			<div class="img-col" style="background-image: url('photo2.jpg');"></div>
+			<div class="img-col" style="background-image: url('photo3.jpg');"></div>
+		</div>
+		<div class="row">
+			<div class="img-col" style="background-image: url('photo4.jpg');"></div>
+			<div class="img-col" style="background-image: url('photo5.jpg');"></div>
+		</div>
+	  </div>
+	  
+	  <hr />
+	  
       <div id="background-image" class="jumbotron">
         <h1>Support Comic Relief and send a funny4money video or a #SleepingSelfie to friends or family</h1>
         <p class="lead">Start now by copying your social media post including #SleepingSelfie, send it to 2 friends or family and gain points as they donate to see your picture / video!</p>
