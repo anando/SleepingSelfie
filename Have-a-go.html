@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> Have A Go &middot; Share your Selfie!
+    <title> Have A Go &middot; Share your Selfie!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -42,7 +42,7 @@
         margin-top: 28px;
       }
     </style>
-    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -62,40 +62,51 @@
 
 	<body>
 	
-	Link to your selfie: <input name='pictureUrl' id='pictureUrl' type='text' maxlength='200' onchange='generateTweet();' />
-	Friend1 <input name='friend1' id='friend1' type='text' maxlength='15' onchange='generateTweet();' />
+	
+	    <div class="container-narrow">
 
-	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-	<p><a id="tweetButton" href="https://twitter.com/intent/tweet?text=hi">Reply</a></p>
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://sleepingselfie.azurewebsites.net">Home</a></li>
+		  <li class="active"><a href="http://sleepingselfie.azurewebsites.net/have-a-go.html">Have A Go</a></li>
+		  <li><a href="http://sleepingselfie.azurewebsites.net/gallery.html">Gallery</a></li>
+		  <li><a href="http://sleepingselfie.azurewebsites.net/donatePage.html">Donate</a></li>
+		  <li><a href="http://sleepingselfie.azurewebsites.net/help.html">Help</a></li>
+        </ul>
+        <h1 class="muted">#Sleeping Selfie</h1>
+      </div>
 
-	<script src="assets/js/jquery.js"></script>  
-	<script type="text/javascript">
-	var twitterApi = "https://twitter.com/intent/tweet?text=";
-	var coreMessage = "I used sleeping selfie to post a picture on twitter. Help comic relief and donate &pound;1 to view this picture!";
-	var ourTweet = coreMessage;
-	
-	setMessage(ourTweet);
-	
-	function generateTweet() {
-	
-		var friend1 = $('#friend1').val();
-		var url = $('#pictureUrl'). val();
+      <hr>
+
+	  <div>
+	  <h2>Invite a friend!</h2>
+
+	  <input type="text" id="pictureUrl" placeholder="Selfie Url" onchange='generateTweet();' >
+	  <div class="input-prepend">
+		  <span class="add-on">@</span>
+		  <input id="friend1" name="friend1" class="form-control" type="text" placeholder="Your friends twitter name" onchange='generateTweet();' >
+	  </div>
+	  <div class="form-group">
+		<a id="tweetButton" href="https://twitter.com/intent/tweet?text=hi"  class="btn btn-success btn-lg">Tweet now!</a>
+	  </div>
 		
-		if(friend1 != ""){
-			ourTweet = "Hey @" + friend1 + " " + coreMessage;
-		}	
-		
-		setMessage(ourTweet);
-	}
 	
-	function setMessage(text){
-		var msg = encodeURIComponent(ourTweet.replace(/&amp;/g, "&"));
-		$("#tweetButton").attr("href", twitterApi + ourTweet);	
-	}
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	  </div>
+	   
+
+      <div class="footer">
+        <p>Comic Relief Centre, YRS 2014. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International Licence.</a> </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/HAG.js"></script>
 	
-	</script>
-	
-	
+	<!-- 
 	
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
@@ -109,6 +120,6 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
-
+ -->
   </body>
 </html>
