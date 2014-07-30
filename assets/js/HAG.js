@@ -1,4 +1,4 @@
-var defaultMessage = "I used #sleepingselfie to post a picture on twitter. Donate £1 to view the picture! Here's the link: ";
+var defaultMessage = "I used #sleepingselfie to make a tweet. Donate £1 to view the picture! Here's the link: ";
 setMessage(defaultMessage);
 
 function generateTweet() {
