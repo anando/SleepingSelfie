@@ -5,6 +5,7 @@ function generateTweet() {
 
 	var friend1 = $('#friend1').val();
 	var url = $('#pictureUrl'). val();
+	url="http://sleepingselfie.azurewebsites.net/donate-and-continue.html?" + url;
 	
 	var thisMessage = defaultMessage;
 	if(friend1 != ""){
